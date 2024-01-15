@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <h1>This is login page</h1>
+    <h1>This is login view</h1>
   </main>
 </template>
 
