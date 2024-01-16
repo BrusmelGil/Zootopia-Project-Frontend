@@ -1,5 +1,6 @@
 <script setup>
 
+
 </script>
 
 <template>
@@ -13,7 +14,7 @@
 
     </div>
 
-    <h3>LOG OUT</h3>
+    <RouterLink class="routerLink" to="/">LOG OUT</RouterLink>
 
 </div>
 </template>
@@ -45,7 +46,7 @@
         }
     }
 
-    h3 {
+    .routerLink {
         font-family: 'Shojumaru', system-ui;
         font-size: 15px;
         padding: 10px;
@@ -53,6 +54,10 @@
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.77);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+        &:visited {
+            color: black;
+        }
     }
 
 }
