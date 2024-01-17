@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="image">
-        <img src="../../../public/img/pexels-oleksandr-p-1004517 2.png" alt="Imagen de ave">
+        <img src="" alt="Imagen de ave">
         </div>
 
         <div class="input-global">
@@ -38,11 +38,11 @@
         </div>
         </div>
     </div>
-    
+
 
     <div class="container">
         <div class="image">
-        <img src="../../../public/img/pexels-pixabay-2361.png" alt="Imagen de ave">
+        <img src="" alt="Imagen de ave">
         </div>
 
         <div class="input-global">
