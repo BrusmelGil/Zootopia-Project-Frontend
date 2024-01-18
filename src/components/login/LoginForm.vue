@@ -66,15 +66,15 @@
     flex-direction: column;
 }
 #logo-box{
-    width: 130px;
+    width: 150px;
     position: top;
     justify-content: center;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     
 }
 #logo-mobile{
-    height: 70px;
-    width: 170px;
+    height: 80px;
+    
 }
 ::placeholder {
   color: white;
