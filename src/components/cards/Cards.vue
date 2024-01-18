@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="image">
-        <img src="../../../public/img/" alt="Imagen de ave">
+        <img src="../../../public/img/loro.png" alt="Imagen de ave">
         </div>
 
         <div class="input-global">
