@@ -22,8 +22,8 @@
         
     <section class="form-main" >
         <div id="logo-box"> 
-            <img id="logo-mobile" src="/images/logo.png"></img>
-            <h2>Zootopia</h2>
+            <img id="logo-mobile" src="/images/logo-zootopia.png"></img>
+            
         </div>
         
         <div class="form-content">
@@ -62,30 +62,32 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
 }
 #logo-box{
-    width: 100px;
-    position: center;
+    width: 130px;
+    position: top;
     justify-content: center;
-
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     
 }
 #logo-mobile{
-    height: 60px;
+    height: 70px;
+    width: 170px;
 }
 ::placeholder {
   color: white;
   opacity: 1; /* Firefox */
-  padding: 10px;
+  padding: 5%;
   font-family: 'Inter', sans-serif;
+  //font-size: smaller;
 }
 
 
 .form-content h2 {
-    font-size: 30px;
-    margin-bottom:20vh;
+    font-size: 40px;
+    margin-bottom:10vh;
     text-align: center;
     line-height: 1.2;
     color: white;
@@ -101,41 +103,43 @@
 
 .form-content .input-control {
     display: flex;
-    height: 45px;
-    width: 50vw;
+    height: 55px;
+    width: 65vw;
     background-color: $light-green;
     color: white;
     text-align: left;
     font-weight: 300;
     font-size: 16px;
-    margin-bottom: 16%;
+    margin-bottom: 20%;
     border-radius: 10px;
+    padding: 5%;
 }
 
 button{
     text-decoration: none;
-    font-weight: 500;
     color: white;
     border-radius: 10px ;
     font-weight: 300;
     padding: 5%;
     background: #FF9413;
-    
+    margin-top: 20%;
 
 } 
 
 .form-content .btn {
-    height: 45px;
+    height: 55px;
     width: 100%;
-    font-size: 20px;
-    font-weight: 500;
+    width: 65vw;
+    font-size: 30px;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 10px;
     font-family: 'Zen Tokyo Zoo', system-ui;
     background: #FF9413;;
     color: white;
     //margin-left: 20%;
-    margin-top: 20%;
+   // margin-top: 10%;
+    margin-bottom: 20%;
 
 } 
 
