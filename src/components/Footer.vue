@@ -6,7 +6,7 @@
 
 <div id="rrss">
 
-    <img src="/facebook-svgrepo-com.svg" alt="">
+    <img src="/facebook-color-svgrepo-com.svg" alt="">
     <img src="/instagram-1-svgrepo-com.svg" alt="">
     <img src="/twitter-svgrepo-com.svg" alt="">
 
@@ -23,9 +23,17 @@
     background-color: $dark-green;
 
     img {
-        width: 3%;
+        width: 2.5%;
         padding: 10px;
     }
+}
+
+@media only screen and (max-width: 575px){
+
+    #rrss {
+        display: none;
+    }
+
 }
 
 </style>
