@@ -31,12 +31,14 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-        </div>
 
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+        </div>
+
+        
     </div>
 
 
@@ -65,11 +67,12 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-        </div>
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+        </div>
+        
     </div> 
 
     <div class="card-container">
@@ -97,11 +100,12 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-        </div>
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+        </div>
+        
     </div>
 
         <div class="card-container">
@@ -129,11 +133,12 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-        </div>
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+        </div>
+        
     </div>
 
     <div class="card-container">
@@ -161,11 +166,12 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-        </div>
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+        </div>
+        
     </div>
 
     <div class="card-container">
@@ -193,12 +199,13 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-        </div>
-        <div class="buttons-container">
-            <div class="btn"><button type="submit"><img src="../../../public/img/" alt=""></button></div>
+            <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/lapiz3.png" alt=""></button></div>
             <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
+
+        </div>
+        
     </div> 
     
 
@@ -230,7 +237,7 @@
     display: grid;
     grid-template-rows: repeat(5, auto);
     gap: 10px;
-    width: 80%;
+    width: 70%;
     align-items: center;
 }
 
@@ -246,6 +253,8 @@ display: flex;
 gap: 10px;
 margin-top: 10px;
 justify-content: center;
+width: 65%;
+margin-left: 15%;
 }
 
 .btn button {
@@ -255,10 +264,11 @@ color: white;
 border: none;
 border-radius: 4px;
 cursor: pointer;
+
 }
 
 .btn img {
-max-width: 100%;
+max-width: 70%;
 }
 
 </style>
