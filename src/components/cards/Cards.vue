@@ -31,16 +31,16 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
     </div>
 
 
-   <!--  <div class="container">
+<div class="card-container">
         <div class="image">
         <img src="../../../public/img/lobo.png" alt="Imagen de ave">
         </div>
@@ -65,15 +65,14 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
-    </div> -->
+    </div> 
 
-    <!-- <div class="container">
+    <div class="card-container">
         <div class="image">
         <img src="../../../public/img/aguila.png" alt="Imagen de ave">
         </div>
@@ -98,15 +97,14 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
     </div>
 
-    <div class="container">
+        <div class="card-container">
         <div class="image">
         <img src="../../../public/img/conejo.png" alt="Imagen de ave">
         </div>
@@ -131,15 +129,14 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="card-container">
         <div class="image">
         <img src="../../../public/img/serpiente.png" alt="Imagen de ave">
         </div>
@@ -164,15 +161,14 @@
             <label for="admission-date">Date of admission: </label>
             <input type="date" id="admission-date">
             </div>
-
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/pencil-svgrepo-com 1.png" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="card-container">
         <div class="image">
         <img src="../../../public/img/tigre.png" alt="Imagen de ave">
         </div>
@@ -198,13 +194,12 @@
             <input type="date" id="admission-date">
             </div>
 
-            <div class="buttons-container">
-            <div class="btn"><button type="submit">Editar</button></div>
-            <div class="btn"><button type="submit">Borrar</button></div>
         </div>
+        <div class="buttons-container">
+            <div class="btn"><button type="submit"><img src="../../../public/img/" alt=""></button></div>
+            <div class="btn"><button type="submit"><img src="../../../public/img/papelera.png" alt=""></button></div>
         </div>
-    </div> -->
-
+    </div> 
     
 
 
@@ -214,43 +209,56 @@
 <style lang="scss" scoped>
 
 .card-container{
-    display: flex;
-    border: 1px solid black;
-    width: 33%;
-    height: 40%;
-    border-radius: 15px;
-    $salad: #8ED17E;
-    
-}
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #a3f8bb73;
+    height: 90%;
 
-#miInput{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .image img{
-    width: 50%;
+    max-width: 120%;
     margin-left: 5%;
     margin-top: 20px;
 
 }
 
 .input-global{
-    margin: 5% 0;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 10px;
+    width: 80%;
+    align-items: center;
 }
 
-
-    .btn {
-    margin-right: 0px; 
-    display: inline;
-    justify-content:space-between ;
+.form-group {
+display: flex;
+flex-direction: column;
+align-self: center;
+border-radius: 10px;
 }
 
-.btn:last-child {
-    margin-right: 0;
+.buttons-container {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+justify-content: center;
 }
 
+.btn button {
+padding: 8px 16px;
+background-color: #ff9513;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.btn img {
+max-width: 100%;
+}
 
 </style>
