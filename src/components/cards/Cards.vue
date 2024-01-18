@@ -222,7 +222,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #a3f8bb73;
-    height: 90%;
+    height: 100%;
 
 }
 
