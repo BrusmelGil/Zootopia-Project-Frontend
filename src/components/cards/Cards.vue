@@ -6,6 +6,8 @@
 
 <template>
 
+<div id="card-global">
+
     <div class="card-container">
         <div class="image">
         <img src="../../../public/img/loro.png" alt="Imagen de ave">
@@ -40,9 +42,7 @@
 
         
     </div>
-
-
-<div class="card-container">
+    <div class="card-container">
         <div class="image">
         <img src="../../../public/img/lobo.png" alt="Imagen de ave">
         </div>
@@ -108,7 +108,7 @@
         
     </div>
 
-        <div class="card-container">
+    <div class="card-container">
         <div class="image">
         <img src="../../../public/img/conejo.png" alt="Imagen de ave">
         </div>
@@ -207,6 +207,8 @@
         </div>
         
     </div> 
+
+</div>
     
 
 
@@ -215,19 +217,32 @@
 
 <style lang="scss" scoped>
 
+#card-global {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    gap: 20px;
+/* padding: 100px; */ //coloque este en 100 para que se colocara las cards más pequeñas.
+    overflow-y:auto;
+    margin: 20px 0;
+}
+
 .card-container{
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 40px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #a3f8bb73;
+    background: linear-gradient(0deg, rgba(242,253,185,1) 13%, rgba(142,209,126,1) 79%);
     height: 100%;
+    width: 100%;
+
+    
 
 }
 
 .image img{
-    max-width: 120%;
+    max-width: 100%;
     margin-left: 5%;
     margin-top: 20px;
 

@@ -27,10 +27,7 @@ main{
   background-size: cover;
   height: 100vh;
   width: 100%;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-gap: 10px; 
-padding: 100px; //coloque este en 100 para que se colocara las cards más pequeñas.
-
+  display: flex;
+  justify-content: center;
 }
 </style>
