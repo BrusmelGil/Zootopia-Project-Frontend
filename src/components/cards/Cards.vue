@@ -14,6 +14,7 @@
         </div>
 
         <div class="input-global">
+            <h3 class="name-title">Mark</h3>
         <div class="form-group">
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Aves">
@@ -49,6 +50,7 @@
 
         <div class="input-global">
         <div class="form-group">
+            <h3 class="name-title">Mark</h3>
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Caninos">
         </div>
@@ -82,6 +84,7 @@
 
         <div class="input-global">
         <div class="form-group">
+            <h3 class="name-title">Mark</h3>
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Caninos">
         </div>
@@ -115,6 +118,7 @@
 
         <div class="input-global">
         <div class="form-group">
+            <h3 class="name-title">Mark</h3>
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Caninos">
         </div>
@@ -148,6 +152,7 @@
 
         <div class="input-global">
         <div class="form-group">
+            <h3 class="name-title">Mark</h3>
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Caninos">
         </div>
@@ -181,6 +186,7 @@
 
         <div class="input-global">
         <div class="form-group">
+            <h3 class="name-title">Mark</h3>
             <label for="family">Family: </label>
             <input type="text" id="family" placeholder="Caninos">
         </div>
@@ -196,7 +202,7 @@
             </div>
 
             <div class="form-group">
-            <label for="admission-date">Date of admission: </label>
+            <label for="admission-date" id="date">Date of admission: </label >
             <input type="date" id="admission-date">
             </div>
             <div class="buttons-container">
@@ -206,9 +212,9 @@
 
         </div>
         
-    </div> 
+    </div>
 
-</div>
+</div>  
     
 
 
@@ -218,42 +224,50 @@
 <style lang="scss" scoped>
 
 #card-global {
-    width: 90%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 2fr));
     gap: 20px;
-/* padding: 100px; */ //coloque este en 100 para que se colocara las cards más pequeñas.
-    overflow-y:auto;
-    margin: 20px 0;
+    margin: 50px 30px;
+    
 }
 
 .card-container{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: linear-gradient(0deg, rgba(242,253,185,1) 13%, rgba(142,209,126,1) 79%);
-    height: 100%;
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(35, 216, 183, 0.751) 47%, rgb(68, 158, 46) 98%);
     width: 100%;
-
     
 
 }
 
+.name-title{
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 10%;
+}
+/* 
 .image img{
     max-width: 100%;
     margin-left: 5%;
-    margin-top: 20px;
+    margin-top: 40px;
 
+} */
+
+.image{
+    width: 80% ;
+    margin-top: 40px;
+    margin-left: 5%;
 }
 
 .input-global{
-    display: grid;
-    grid-template-rows: repeat(5, auto);
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    width: 70%;
+    width: 100%;
     align-items: center;
+
 }
 
 .form-group {
@@ -268,22 +282,23 @@ display: flex;
 gap: 10px;
 margin-top: 10px;
 justify-content: center;
-width: 65%;
-margin-left: 15%;
+width: 50%;
 }
 
 .btn button {
 padding: 8px 16px;
-background-color: #ff9513;
-color: white;
-border: none;
-border-radius: 4px;
+background-color: #ff9513f0;
+border-radius: 10px;
 cursor: pointer;
 
 }
 
 .btn img {
-max-width: 70%;
+max-width: 100%;
+}
+
+#date{
+    margin-left: 20%;
 }
 
 </style>
