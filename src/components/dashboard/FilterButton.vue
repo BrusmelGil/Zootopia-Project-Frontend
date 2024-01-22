@@ -34,13 +34,13 @@ function filterFamily() {
 <ul class="dropdown-list" v-show="isDropdownOpen">
 
   <div id="item-1">
-  <input type="checkbox" id="item-1" name="Félidos" value="Félidos" @click="filterFamily" />
-  <label> <a href="#"> Félidos </a> </label>
+  <input type="checkbox" id="item-1" name="Felids" value="Felids" @click="filterFamily" />
+  <label> <a href="#"> Felids </a> </label>
   </div>
 
   <div id="item-2">
-  <input type="checkbox" id="item-2" name="Cánidos" value="Cánidos" @click="filterFamily" />
-  <label> <a href="#"> Cánidos </a> </label>
+  <input type="checkbox" id="item-2" name="Canids" value="Canids" @click="filterFamily" />
+  <label> <a href="#"> Canids </a> </label>
   </div>
 
   <div id="item-3">
@@ -58,6 +58,10 @@ function filterFamily() {
   <label> <a href="#"> Leporidae </a> </label>
   </div>
 
+  <div id="item-6">
+  <input type="checkbox" id="item-6" name="Birds" value="Birds" @click="filterFamily" />
+  <label> <a href="#"> Birds </a> </label>
+  </div>
 </ul>
 
 </div>
