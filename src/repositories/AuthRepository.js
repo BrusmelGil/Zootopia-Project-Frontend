@@ -8,7 +8,8 @@ export default class AnimalRepository {
             const response = await fetch(this.uri + '/login', {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Basic ' + username + ':' + password
+                    'Authorization': 'Basic ' + username + ':' + password,
+                    'Content-Type': 'application/json'
                 }
             });
             const text = await response.json();
