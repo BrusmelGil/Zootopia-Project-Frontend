@@ -5,11 +5,11 @@ export default class AnimalRepository {
     async login(username, password) {
 
         try {
+            let authString = `${username}:${password}`
             const response = await fetch(this.uri + '/login', {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Basic ' + username + ':' + password,
-                    'Content-Type': 'application/json'
+                    'Authorization': 'Basic ' + authString
                 }
             });
             const text = await response.json();
