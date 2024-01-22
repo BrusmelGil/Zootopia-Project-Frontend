@@ -4,6 +4,7 @@ import Footer from '../components/Footer.vue';
 import Searchbar from '../components/buttons/Searchbar.vue';
 import AddDesktop from '../components/buttons/AddDesktop.vue';
 import AddMobile from '../components/buttons/AddMobile.vue';
+import Filter from '../components/dashboard/FilterButton.vue';
 </script>
 
 <template>
@@ -26,7 +27,7 @@ import AddMobile from '../components/buttons/AddMobile.vue';
     <h1>This is a dashboard view,</h1>
 
     <div id="bottomContainer">
-
+      <Filter />
 
       <div class="addMobile">
 
@@ -36,6 +37,7 @@ import AddMobile from '../components/buttons/AddMobile.vue';
 
     </div>
 
+    
     <Footer />
 
   </div>
