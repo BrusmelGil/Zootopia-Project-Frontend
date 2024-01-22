@@ -1,5 +1,4 @@
 
-
 <script setup>
 import Cards from '@/components/cards/Cards.vue';
 
@@ -7,8 +6,14 @@ import Cards from '@/components/cards/Cards.vue';
 </script>
 
 <template>
+
   <main>
-    <Cards />
+
+    
+
+
+
+    <Cards  v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     <!-- <h1>This is a dashboard view,</h1> -->
   </main>
 </template>
@@ -23,10 +28,10 @@ import Cards from '@/components/cards/Cards.vue';
 
 main{
   background-image: url(../../public/img/backgroud\ hojas.png);
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 </style>
