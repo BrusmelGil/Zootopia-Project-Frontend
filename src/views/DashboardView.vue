@@ -1,6 +1,8 @@
 
 <script setup>
 import Cards from '@/components/cards/Cards.vue';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
 
 </script>
@@ -9,14 +11,15 @@ import Cards from '@/components/cards/Cards.vue';
 
   <main>
 
-    
-
-
-
     <Cards  v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     <!-- <h1>This is a dashboard view,</h1> -->
+
+    <Header /> 
+    <!--  <h1>This is a dashboard view,</h1> -->
+    <Footer />
+
   </main>
-</template>
+
 
 <style lang="scss" scoped>
 
