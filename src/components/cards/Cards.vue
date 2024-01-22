@@ -1,11 +1,35 @@
 <script setup>
 
 
+/* document.getElementById('editarFormulario').addEventListener('click', function() {
+    var boton = document.getElementById('editarFormulario');
+    var campos = document.querySelectorAll('#formularioAjax input, #formularioAjax textarea');
+
+    if (boton.innerText === 'Habilitar formulario') {
+        // Habilitar los campos
+        campos.forEach(function(campo) {  
+            campo.disabled = false;
+        });
+
+    // Cambia el texto y color del botón
+        boton.innerText = 'Deshabilitar formulario'; 
+        boton.style.backgroundColor = '#dc3545'; // Rojo
+    } else {
+        // Deshabilita los campos
+        campos.forEach(function(campo) {
+            campo.disabled = true;
+        });
+
+        // Restaura el texto y color del botón
+        boton.innerText = 'Habilitar formulario';
+        boton.style.backgroundColor = '#28a745'; // Verde
+    }
+});
+ */
 
 </script>
 
 <template>
-
 <div id="card-global">
 
     <div class="card-container">
@@ -214,9 +238,7 @@
         
     </div>
 
-</div>  
-    
-
+</div>
 
 
 </template>
