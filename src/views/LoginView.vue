@@ -20,6 +20,8 @@ import ImagesLogin from "./../components/login/ImagesLogin.vue";
 }
 #login-form {
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 main {
   background-image: url(./../../public/images/background.png);
@@ -28,7 +30,7 @@ main {
   background-position: right;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 600px) {
   main {
     display: flex;
     flex-direction: row;
