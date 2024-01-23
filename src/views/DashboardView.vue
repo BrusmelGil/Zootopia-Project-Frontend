@@ -11,14 +11,20 @@ import Footer from '../components/Footer.vue';
 
   <main>
 
-    <Cards  v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
-    <!-- <h1>This is a dashboard view,</h1> -->
+    <header /> 
 
-    <Header /> 
-    <!--  <h1>This is a dashboard view,</h1> -->
+    <body>
+      <Cards  />
+      
+    </body>
+      
+
+    <!-- <h1>This is a dashboard view,</h1> -->
     <Footer />
 
   </main>
+
+  </template>
 
 
 <style lang="scss" scoped>
@@ -34,7 +40,7 @@ main{
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
 }
+
 </style>
