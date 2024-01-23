@@ -128,6 +128,7 @@ const submitForm = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 
     h2 {
         font-size: 40px;
