@@ -1,6 +1,6 @@
 export default class AnimalRepository {
 
-    uri = import.meta.env.VITE_API_ENDPOINT_USERS
+    uri = import.meta.env.VITE_API_ENDPOINT_GENERAL
 
     async login(username, password) {
 
