@@ -10,6 +10,7 @@ const date = ref("");
 const editing = ref(false);
 
 
+
 const editCard = () => {
 editing.value = true;
 };
@@ -66,7 +67,7 @@ const deleteCard = () => {
 
                 <div class="white-input" >
                     <h2>Date of admission:</h2>
-                    <p v-if="!editing" >{{ date }} </p>
+                    <!-- <p v-if="!editing" >{{ date }} </p> -->
                     <input type="date" v-if="editing" v-model="family" placeholder="hembra" />
 
                 </div>
@@ -116,7 +117,7 @@ const deleteCard = () => {
 }
 
 .image{
-    width: 70% ;
+    width: 80% ;
     margin-top: 30px;
     margin-left: 5%;
     
@@ -132,23 +133,25 @@ img{
     gap: 10px;
     width: 100%;
     align-items: center;
+    
 
 }
 
 .form-group {
 display: flex;
 flex-direction: column;
-align-self: center;
 border-radius: 10px;
-margin-bottom: 10px;
+margin-bottom: 5px;
+gap: 15px;
 }
 
 h2{
-    font-size: large;
+    font-size: medium;
 }
 
 p{
     margin-left: 8%;
+    text-decoration: underline;
     
 }
 
@@ -174,20 +177,47 @@ max-width: 100%;
 
 }
 
-/* .white-input {
+input{
+    width: 70%;
+
+}
+
+.white-input {
     display: flex;
     border-radius: 10px;
     height: 20px;
+    
+
 } 
- */
-input{
-    width: 90%;
+
+/* @media (max-width: 1025px) {  
+        width: 80%;
+        padding: 20px;
+
+        .card-container {
+            flex-direction: column;
+        }
+
+        .name-title {
+            margin-top: 5%;
+        }
+
+        .image {
+            width: 100%;
+            margin-top: 15px;
+            margin-left: 0;
+        }
+
+        .buttons-container {
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+        }
+    } */
 }
 
-
-
-
-}
 
 
 </style>
