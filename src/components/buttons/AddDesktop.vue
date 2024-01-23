@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref } from 'vue';
 
 const isFormOpen = ref(false);
@@ -7,6 +8,12 @@ const newAnimalFamily = ref('');
 const newAnimalType = ref('');
 const newAnimalGender = ref('');
 const newAnimalDate = ref('');
+const animals = ref({name: newAnimalName.value,
+    photo: null,
+    familyName: newAnimalFamily.value,
+    typeName: newAnimalType.value,
+    genderName: newAnimalGender.value,
+  });
 
 const openForm = () => {
   isFormOpen.value = true;
@@ -17,8 +24,18 @@ const closeForm = () => {
 };
 
 const submitForm = () => {
+  const newAnimal = {
+    name: newAnimalName.value,
+    photo: null,
+    familyName: newAnimalFamily.value,
+    typeName: newAnimalType.value,
+    genderName: newAnimalGender.value,
+  };
+
+  console.log(newAnimal);
   closeForm();
 };
+
 </script>
 
 <template>
