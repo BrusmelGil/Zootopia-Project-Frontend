@@ -1,3 +1,4 @@
+import Animal from "@/models/Animal";
 import AnimalRepository from "@/repositories/AnimalRepository";
 
 export default class AnimalService {
@@ -13,7 +14,7 @@ export default class AnimalService {
         const animals = await this.repository.getAll()
         
         animals.forEach((animal) => {
-            const animalToAdd = new Ticket(animal.id, animal.name, animal.admission_date, animal.photo, animal.type, animal.family, animal.gender)
+            const animalToAdd = new Animal(animal.id, animal.name, animal.admission_date, animal.photo, animal.type, animal.family, animal.gender)
             this.animals.push(animalToAdd)
         });
 
