@@ -1,19 +1,33 @@
 <script setup>
 import { ref } from "vue"
-import AuthRepository from "./../../repositories/AuthRepository.js"
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute()
 const router = useRouter()
 
-let repository = new AuthRepository
 let username = ref("")
 let password = ref("")
 
-function login(username, password) {
+let uri = import.meta.env.VITE_API_ENDPOINT_GENERAL
 
-  repository.login(username, password)
-  redirectToDashboard()
+async function login(username, password) {
+
+  try {
+    let authString = btoa(`${username}:${password}`)
+    const response = await fetch(uri + '/login', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Basic ' + authString
+      },
+      withCredentials: true
+    });
+    const text = await response.json();
+    console.log(text);
+    redirectToDashboard()
+  } catch (error) {
+    alert("Incorrect email or password")
+    throw new Error('Error occured during API fetch GET request while login')
+  }
 }
 
 function redirectToDashboard() {
