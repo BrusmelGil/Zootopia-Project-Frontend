@@ -1,28 +1,23 @@
 <script setup>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
-import Searchbar from '../components/buttons/Searchbar.vue';
-import AddDesktop from '../components/buttons/AddDesktop.vue';
-import AddMobile from '../components/buttons/AddMobile.vue';
-import Filter from '../components/dashboard/FilterButton.vue';
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Searchbar from "../components/buttons/Searchbar.vue";
+import AddDesktop from "../components/buttons/AddDesktop.vue";
+import AddMobile from "../components/buttons/AddMobile.vue";
+import Filter from "../components/dashboard/FilterButton.vue";
 </script>
 
 <template>
   <div>
-    
     <Header />
 
-      <div id="topContainer">
+    <div id="topContainer">
+      <Searchbar />
 
-        <Searchbar />
-
-        <div class="addDesktop">
-
-          <AddDesktop />
-
-        </div>
-
+      <div class="addDesktop">
+        <AddDesktop />
       </div>
+    </div>
 
     <h1>This is a dashboard view,</h1>
 
@@ -30,21 +25,15 @@ import Filter from '../components/dashboard/FilterButton.vue';
       <Filter />
 
       <div class="addMobile">
-
         <AddMobile />
-
       </div>
-
     </div>
 
-    
     <Footer />
-
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 #topContainer {
   display: flex;
   justify-content: flex-start;
@@ -62,7 +51,6 @@ import Filter from '../components/dashboard/FilterButton.vue';
 }
 
 @media only screen and (min-width: 768px) {
-
   #topContainer {
     .addDesktop {
       display: block;
@@ -70,12 +58,9 @@ import Filter from '../components/dashboard/FilterButton.vue';
   }
 
   #bottomContainer {
-
     .addMobile {
       display: none;
     }
   }
-
 }
-
 </style>
