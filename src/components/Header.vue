@@ -1,5 +1,7 @@
 <script setup>
+import AuthRepository from '@/repositories/AuthRepository';
 
+let repository = new AuthRepository
 
 </script>
 
@@ -14,7 +16,7 @@
 
     </div>
 
-    <RouterLink class="routerLink" to="/">LOG OUT</RouterLink>
+    <RouterLink class="routerLink" to="/" @click="repository.logout()">LOG OUT</RouterLink>
 
 </div>
 </template>
