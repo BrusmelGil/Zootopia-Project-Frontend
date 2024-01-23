@@ -1,4 +1,4 @@
-export default class Ticket {
+export default class Animal {
 
     id
     name
