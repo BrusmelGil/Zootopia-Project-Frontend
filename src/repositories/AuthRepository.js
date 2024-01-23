@@ -6,7 +6,6 @@ export default class AuthRepository {
 
         try {
             let authString = btoa(`${username}:${password}`)
-            console.log(authString)
             const response = await fetch(this.uri + '/login', {
                 withCredentials: true,
                 method: 'GET',
@@ -19,6 +18,19 @@ export default class AuthRepository {
             console.log(text); 
         } catch (error) {
             throw new Error('Error occured during API fetch GET request while login')
+        }
+    }
+
+    async logout() {
+
+        try {
+            const response = await fetch(this.uri + '/logout', {
+                withCredentials: true,
+                method: 'GET',
+            });
+            console.log("Logout successfull"); 
+        } catch (error) {
+            throw new Error('Error occured during API fetch GET request while logout')
         }
     }
 }
