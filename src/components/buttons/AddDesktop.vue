@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref } from 'vue';
 
 const isFormOpen = ref(false);
@@ -7,6 +8,12 @@ const newAnimalFamily = ref('');
 const newAnimalType = ref('');
 const newAnimalGender = ref('');
 const newAnimalDate = ref('');
+const animals = ref({name: newAnimalName.value,
+    photo: null,
+    familyName: newAnimalFamily.value,
+    typeName: newAnimalType.value,
+    genderName: newAnimalGender.value,
+  });
 
 const openForm = () => {
   isFormOpen.value = true;
@@ -17,8 +24,18 @@ const closeForm = () => {
 };
 
 const submitForm = () => {
+  const newAnimal = {
+    name: newAnimalName.value,
+    photo: null,
+    familyName: newAnimalFamily.value,
+    typeName: newAnimalType.value,
+    genderName: newAnimalGender.value,
+  };
+
+  console.log(newAnimal);
   closeForm();
 };
+
 </script>
 
 <template>
@@ -33,12 +50,12 @@ const submitForm = () => {
           <button @click="closeForm">X</button>
           <h2>NEW ANIMAL</h2>
 
-          <div class="form-group">
+          <div class="formGroup">
             <label for="animalName">NAME:</label>
             <input type="text" id="animalName" v-model="newAnimalName" />
           </div>
 
-          <div class="form-group">
+          <div class="formGroup">
             <label for="animalFamily">FAMILY:</label>
             <select id="animalFamily" v-model="newAnimalFamily">
               <option value="felids">Felids</option>
@@ -50,12 +67,12 @@ const submitForm = () => {
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="formGroup">
             <label for="animalType">TYPE:</label>
             <input type="text" id="animalType" v-model="newAnimalType" />
           </div>
 
-          <div class="form-group">
+          <div class="formGroup">
             <label for="animalGender">GENDER:</label>
             <select id="animalGender" v-model="newAnimalGender">
               <option value="female">Female</option>
@@ -63,12 +80,12 @@ const submitForm = () => {
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="formGroup">
             <label for="animalDate">DATE OF ADMISSION:</label>
             <input type="date" id="animalDate" v-model="newAnimalDate" />
           </div>
 
-          <div class="form-group">
+          <div class="formGroup">
             <button type="submit">SAVE</button>
           </div>
         </form>
@@ -120,7 +137,7 @@ const submitForm = () => {
     border-radius: 5px;
   }
   
-  .form-group {
+  .formGroup {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
