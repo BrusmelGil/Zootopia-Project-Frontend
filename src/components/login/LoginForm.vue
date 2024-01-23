@@ -1,51 +1,53 @@
 <script setup>
-    
-import {ref} from "vue"
+import { ref } from "vue"
 import AuthRepository from "./../../repositories/AuthRepository.js"
+import { useRoute, useRouter } from "vue-router";
 
-    let repository = new AuthRepository
-    let username = ref("")
-    let password = ref("")
+const route = useRoute()
+const router = useRouter()
 
- function login(username, password){
+let repository = new AuthRepository
+let username = ref("")
+let password = ref("")
 
-    let encryptedPassword = btoa (password)
-    repository.login(username, password)
-    //redirectToDashboard()
- }
+function login(username, password) {
 
- function redirectToDashboard() {
-     const redirectPath = route.query.redirect || '/Dashboard'
-     router.push(redirectPath) 
- }
+  repository.login(username, password)
+  redirectToDashboard()
+}
+
+function redirectToDashboard() {
+  const redirectPath = route.query.redirect || '/dashboard'
+  router.push(redirectPath)
+}
 </script>
 <template>
-        
-    <section class="form-main" >
-        <div id="logo-box"> 
-            <img id="logo-mobile" src="/images/logo-zootopia.png"></img>
-            
+  <section class="form-main">
+    <div id="logo-box">
+      <img id="logo-mobile" src="/images/logo-zootopia.png">
+
+    </div>
+
+    <div class="form-content">
+
+      <h2>LOGIN </h2>
+
+      <form @submit.prevent="login(username, password)">
+        <div class="input-box">
+          <input type="text" name="username" id="usernme" placeholder="Username" class="input-control" v-model="username">
+
         </div>
-        
-        <div class="form-content">
+        <div class="input-box">
+          <input type="password" name="password" id="password" placeholder="Password" class="input-control"
+            v-model="password">
 
-                <h2>LOGIN </h2>
-                
-                <form @submit.prevent="login(username, password)">
-                    <div class="input-box">
-                        <input type="text"  name="username"  id="usernme" placeholder="Username" class="input-control" v-model="username">
-
-                    </div>
-                    <div class="input-box">
-                        <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
-                        
-                    </div>
-                <button type="submit" class="btn">Login</button>
-
-                </form>
-            
         </div>
-    </section>
+        <button type="submit" class="btn">Login</button>
+
+      </form>
+
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -61,18 +63,22 @@ section {
   flex-direction: column;
   width: 100%;
 }
+
 #logo-box {
   width: 150px;
   font-family: "Yanone Kaffeesatz", sans-serif;
+
   img {
     height: 80px;
   }
 }
+
 .form-content {
   width: 80%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
   form {
     margin: 25px 0 20px;
     color: white;
@@ -93,6 +99,7 @@ section {
       border-radius: 10px;
       padding: 5%;
     }
+
     button {
       text-decoration: none;
       color: white;
@@ -106,6 +113,7 @@ section {
       font-family: "Zen Tokyo Zoo", system-ui;
     }
   }
+
   h2 {
     padding: 1% 0;
     font-size: 40px;
@@ -127,5 +135,4 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-</style>
+}</style>
