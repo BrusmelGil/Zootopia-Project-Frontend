@@ -1,16 +1,17 @@
 <script setup>
+    
+import {ref} from "vue"
+import AuthRepository from "./../../repositories/AuthRepository.js"
 
+    let repository = new AuthRepository
+    let username = ref("")
+    let password = ref("")
 
- function login(){
+ function login(username, password){
 
-     for (let index = 0; index < store.users.length; index++) {
-         if (store.users[index].username == email.value && store.users[index].password == password.value) {
-             store.users[index].isAuthenticated = true
-             redirectToDashboard()
-         } else {
-             alert("Incorrect email or password")
-         }
-     }
+    let encryptedPassword = btoa (password)
+    repository.login(username, password)
+    //redirectToDashboard()
  }
 
  function redirectToDashboard() {
@@ -30,9 +31,9 @@
 
                 <h2>LOGIN </h2>
                 
-                <form @submit.prevent="login(), store.changeLoggedState()">
+                <form @submit.prevent="login(username, password)">
                     <div class="input-box">
-                        <input type="email"  name="email"  id="email" placeholder="Username" class="input-control" v-model="email">
+                        <input type="text"  name="username"  id="usernme" placeholder="Username" class="input-control" v-model="username">
 
                     </div>
                     <div class="input-box">
