@@ -1,51 +1,51 @@
 <script setup>
-function login() {
-  for (let index = 0; index < store.users.length; index++) {
-    if (
-      store.users[index].username == email.value &&
-      store.users[index].password == password.value
-    ) {
-      store.users[index].isAuthenticated = true;
-      redirectToDashboard();
-    } else {
-      alert("Incorrect email or password");
-    }
-  }
-}
+    
+import {ref} from "vue"
+import AuthRepository from "./../../repositories/AuthRepository.js"
 
-function redirectToDashboard() {
-  const redirectPath = route.query.redirect || "/Dashboard";
-  router.push(redirectPath);
-}
+    let repository = new AuthRepository
+    let username = ref("")
+    let password = ref("")
+
+ function login(username, password){
+
+    let encryptedPassword = btoa (password)
+    repository.login(username, password)
+    //redirectToDashboard()
+ }
+
+ function redirectToDashboard() {
+     const redirectPath = route.query.redirect || '/Dashboard'
+     router.push(redirectPath) 
+ }
 </script>
 <template>
-  <section>
-    <div id="logo-box">
-      <img src="/images/logo-zootopia.png" />
-    </div>
-    <div class="form-content">
-      <h2>LOGIN</h2>
-      <form @submit.prevent="login(), store.changeLoggedState()">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Username"
-          class="input-control"
-          v-model="email"
-        />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          class="input-control"
-          v-model="password"
-        />
-        <button type="submit" class="btn">Login</button>
-      </form>
-    </div>
-  </section>
+        
+    <section class="form-main" >
+        <div id="logo-box"> 
+            <img id="logo-mobile" src="/images/logo-zootopia.png"></img>
+            
+        </div>
+        
+        <div class="form-content">
+
+                <h2>LOGIN </h2>
+                
+                <form @submit.prevent="login(username, password)">
+                    <div class="input-box">
+                        <input type="text"  name="username"  id="usernme" placeholder="Username" class="input-control" v-model="username">
+
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
+                        
+                    </div>
+                <button type="submit" class="btn">Login</button>
+
+                </form>
+            
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
