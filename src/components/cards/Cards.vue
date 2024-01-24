@@ -1,17 +1,16 @@
 <script setup>
-
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const props = defineProps({
-    animal: {
-        type: Object,
-        required: true
-    },
-    index: {
-        type: Number,
-        required: true
-    }
-})
+  animal: {
+    type: Object,
+    required: true,
+  },
+  index: {
+    type: Number,
+    required: true,
+  },
+});
 
 const name = ref("Mark");
 const family = ref("Aves");
@@ -20,186 +19,159 @@ const gender = ref("Macho");
 const date = ref("");
 const editing = ref(false);
 
-
-
 const editCard = () => {
-editing.value = true;
+  editing.value = true;
 };
 
 const saveChanges = () => {
-editing.value = false;
-
+  editing.value = false;
 };
 
 const deleteCard = () => {
-    name.value = "";
-    family.value = "";
-    type.value = "";
-    gender.value = "";
-    date.value = "";
+  name.value = "";
+  family.value = "";
+  type.value = "";
+  gender.value = "";
+  date.value = "";
 };
-
-
 </script>
 
 <template>
+  <div class="card-container">
+    <div class="image">
+      <img src="/img/Loro.png" alt="Imagen de ave" />
+    </div>
 
-    <div id="card-global">
-        <div class="card-container">
-            <div class="image">
-            <img src="/img/Loro.png" alt="Imagen de ave">
-            </div>
+    <div class="input-global">
+      <h1>{{ animal.name }}</h1>
 
-            
-            <div class="input-global">
-            <h1 class="name-title">{{ animal.name }}</h1>
-
-            <div class="form-group">
-
-                <div class="white-input" >
-                    <h2>Family:</h2>
-                    <p v-if="!editing"> {{ animal.family.family }} </p>
-                    <input v-if="editing"  v-model="family" placeholder="Aves" />
-                </div>
-
-                <div class="white-input" >
-                    <h2>Type:</h2>
-                    <p v-if="!editing">{{ animal.type.type }}</p>
-                    <input v-if="editing" v-model="type" placeholder="Guacamaya" />
-                </div>
-
-
-                <div class="white-input" >
-                    <h2>Gender:</h2>
-                    <p  v-if="!editing" >{{ animal.gender.gender }} </p>
-                    <input v-if="editing" v-model="gender" placeholder="hembra" />
-                </div>
-
-
-                <div class="white-input" >
-                    <h2>Date of admission: {{ animal.admission_date }}</h2>
-                    <!-- <p v-if="!editing" >{{ date }} </p> -->
-                    <input type="date" v-if="editing" v-model="family" placeholder="hembra" />
-
-                </div>
-                
+      <div class="form-group">
+        <div>
+          <h2>Family:</h2>
+          <p v-if="!editing">{{ animal.family.family }}</p>
+          <input v-if="editing" v-model="family" placeholder="Aves" />
         </div>
 
-            <div class="buttons-container">
-                <div class="btn">
-                <button @click="editCard()">
-                    <img src="/img/lapiz3.png" alt="">
-                </button>
-                </div>
-                <div class="btn">
-                <button @click="deleteCard">
-                    <img src="/img/papelera.png" alt="">
-                </button>
-                </div>
-            </div>
-            </div>
-        </div>
+        <div>
+          <h2>Type:</h2>
+          <p v-if="!editing">{{ animal.type.type }}</p>
+          <input v-if="editing" v-model="type" placeholder="Guacamaya" />
         </div>
 
+        <div>
+          <h2>Gender:</h2>
+          <p v-if="!editing">{{ animal.gender.gender }}</p>
+          <input v-if="editing" v-model="gender" placeholder="hembra" />
+        </div>
+
+        <div>
+          <h2>Date of admission:</h2>
+          <p v-if="!editing">{{ animal.admission_date }}</p>
+          <input
+            type="date"
+            v-if="editing"
+            v-model="family"
+            placeholder="hembra"
+          />
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button @click="editCard()">
+          <img src="/img/lapiz3.png" alt="" />
+        </button>
+        <button @click="deleteCard">
+          <img src="/img/papelera.png" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-
-#card-global {
-    width: 35%;
-    display: flexbox;
-    padding: 50px;
-    gap: 20px;
-    margin: 50px 30px;
-
-    .card-container{
-    display: flex;
-    border-radius: 10px;
-    background: linear-gradient(0deg, rgba(35, 216, 183, 0.751) 47%, rgb(68, 158, 46) 98%);
-    width: 100%;
+* {
+  font-family: "Inter", sans-serif;
 }
-
-.name-title{
-    font-size: xx-large;
-    text-align: center;
-    margin-top: 10%;
-}
-
-.image{
-    width: 80% ;
+.card-container {
+  display: flex;
+  border-radius: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(35, 216, 183, 0.751) 47%,
+    rgb(68, 158, 46) 98%
+  );
+  max-width: 480px;
+  height: 330px;
+  .image {
+    width: 50%;
     margin-top: 30px;
     margin-left: 5%;
-    
-}
 
-img{
-    height: 80%;
-}
-
-.input-global{
+    img {
+      width: auto;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  .input-global {
+    margin: 0px 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    gap: 5px;
+    width: 50%;
+    justify-content: center;
     align-items: center;
-    
 
+    h1 {
+      font-size: xx-large;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: $dark-green;
+    }
+  }
 }
-
 .form-group {
-display: flex;
-flex-direction: column;
-border-radius: 10px;
-margin-bottom: 5px;
-gap: 15px;
-}
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
 
-h2{
-    font-size: medium;
-}
-
-p{
-    margin-left: 8%;
-    text-decoration: underline;
-    
+  > div {
+    width: 100%;
+    > h2 {
+      margin: 0 0 5px 5px;
+      color: white;
+      font-size: 0.8em;
+    }
+    > p {
+      background-color: white;
+      min-height: 15px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+    }
+  }
 }
 
 .buttons-container {
-display: flex;
-gap: 10px;
-margin-top: 10px;
-justify-content: center;
-width: 60%;
-}
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  width: 130px;
 
-.btn button {
-padding: 8px 16px;
-background-color: #ff9513f0;
-border-radius: 10px;
-cursor: pointer;
-margin-bottom: 15%;
+  gap: 30px;
 
-}
-
-.btn img {
-max-width: 100%;
-
-}
-
-input{
-    width: 70%;
-
-}
-
-.white-input {
-    display: flex;
+  button {
+    background-color: #ff9513f0;
     border-radius: 10px;
-    height: 20px;
-    
-
-} 
-
-/* @media (max-width: 1000px) {  
+    cursor: pointer;
+    padding: 5px;
+  }
+}
+/* @media (max-width: 1000px) {
         width: 80%;
         padding: 20px;
 
@@ -225,8 +197,4 @@ input{
             width: 100%;
         }
     } */
-}
-
-
-
 </style>
