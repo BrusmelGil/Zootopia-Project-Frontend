@@ -18,6 +18,7 @@ export default class AnimalRepository {
         try {
             const response = await fetch(this.uri + '/' + id, {
                 method: 'DELETE',
+                credentials: 'include'
               });
               const text = await response.json();
               console.log(text);
