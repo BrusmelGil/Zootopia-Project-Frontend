@@ -7,15 +7,30 @@ import AddDesktop from "../components/buttons/AddDesktop.vue";
 import AddMobile from "../components/buttons/AddMobile.vue";
 import Filter from "../components/dashboard/FilterButton.vue";
 import Cards from "../components/cards/Cards.vue";
+import { ref } from 'vue';
+
+import AnimalRepository from "../repositories/AnimalRepository";
+import AnimalService from "../services/AnimalService";
+
+
+let repository = new AnimalRepository()
+let service = new AnimalService(repository)
+let animals = []
+let isLoaded = ref(false)
+
+async function setAnimals() {
+    animals = await service.index()
+    isLoaded.value = true
+    console.log(animals)
+    }
+
+    setAnimals();
 </script>
 
 <template>
+  <Header />
 
-  
-  
-    <Header />
-
-    <main>
+  <main>
 
     <div id="topContainer">
       <Searchbar />
@@ -25,9 +40,9 @@ import Cards from "../components/cards/Cards.vue";
       </div>
     </div>
     <div id="cards-container">
-    <Cards />
-  </div>
-  
+      <Cards v-for="(animal, index) in animals" v-if="isLoaded" :animal="animal" :index="index"/>
+    </div>
+
 
     <div id="bottomContainer">
       <Filter />
@@ -37,10 +52,8 @@ import Cards from "../components/cards/Cards.vue";
       </div>
     </div>
   </main>
-    <Footer />
-
-
-  </template>
+  <Footer />
+</template>
 
 
 <style lang="scss" scoped>
@@ -49,25 +62,25 @@ import Cards from "../components/cards/Cards.vue";
   justify-content: flex-start;
   padding: 5px;
 
-*{
-  margin: 0;
-  padding: 0;
-  
-} 
+  * {
+    margin: 0;
+    padding: 0;
 
-main{
-  background-image: url(../../public/img/backgroud\ hojas.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-}
+  }
 
-#cards-container{
-  display: flex;
-  justify-content: space-between;
-  width: 85%;
-  
-}
+  main {
+    background-image: url(/img/background/hojas.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  #cards-container {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+
+  }
 
   .addDesktop {
     display: none;
