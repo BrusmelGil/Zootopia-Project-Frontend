@@ -23,7 +23,7 @@ export default class AnimalService {
 
     async delete(id) {
         const animals = await this.repository.getAll()
-        await this.repository.deleteById(id)
+        await this.repository.delete(id)
         
         animals.splice(id, 1)
         return this.animals

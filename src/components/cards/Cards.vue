@@ -1,4 +1,6 @@
 <script setup>
+import AnimalRepository from "@/repositories/AnimalRepository";
+import AnimalService from "@/services/AnimalService";
 import { ref } from "vue";
 
 const props = defineProps({
@@ -11,6 +13,9 @@ const props = defineProps({
     required: true,
   },
 });
+
+let repository = new AnimalRepository
+let service = new AnimalService(repository)
 
 const name = ref("Mark");
 const family = ref("Aves");
@@ -27,13 +32,9 @@ const saveChanges = () => {
   editing.value = false;
 };
 
-const deleteCard = () => {
-  name.value = "";
-  family.value = "";
-  type.value = "";
-  gender.value = "";
-  date.value = "";
-};
+function deleteAnimal() {
+    service.delete(props.animal.id)
+}
 </script>
 
 <template>
@@ -80,7 +81,7 @@ const deleteCard = () => {
         <button @click="editCard()">
           <img src="/img/lapiz3.png" alt="" />
         </button>
-        <button @click="deleteCard">
+        <button @click="deleteAnimal()">
           <img src="/img/papelera.png" alt="" />
         </button>
       </div>
