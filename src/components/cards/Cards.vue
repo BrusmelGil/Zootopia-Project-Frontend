@@ -1,22 +1,17 @@
 <script setup>
 
 import { ref } from 'vue';
-import AnimalRepository from "../../repositories/AnimalRepository";
-import AnimalService from "../../services/AnimalService";
 
-
-let repository = new AnimalRepository()
-let service = new AnimalService(repository)
-let animals = []
-let isLoaded = ref(false)
-
-async function setAnimals() {
-    animals = await service.index()
-    isLoaded.value = true
-    console.log(animals)
+const props = defineProps({
+    animal: {
+        type: Object,
+        required: true
+    },
+    index: {
+        type: Number,
+        required: true
     }
-
-    setAnimals();
+})
 
 const name = ref("Mark");
 const family = ref("Aves");
@@ -52,37 +47,37 @@ const deleteCard = () => {
     <div id="card-global">
         <div class="card-container">
             <div class="image">
-            <img src="../../../public/img/loro.png" alt="Imagen de ave">
+            <img src="/img/Loro.png" alt="Imagen de ave">
             </div>
 
             
             <div class="input-global">
-            <h1 class="name-title">{{ name }}</h1>
+            <h1 class="name-title">{{ animal.name }}</h1>
 
             <div class="form-group">
 
                 <div class="white-input" >
                     <h2>Family:</h2>
-                    <p v-if="!editing"> {{ family }} </p>
+                    <p v-if="!editing"> {{ animal.family.family }} </p>
                     <input v-if="editing"  v-model="family" placeholder="Aves" />
                 </div>
 
                 <div class="white-input" >
                     <h2>Type:</h2>
-                    <p v-if="!editing">{{ type }}</p>
+                    <p v-if="!editing">{{ animal.type.type }}</p>
                     <input v-if="editing" v-model="type" placeholder="Guacamaya" />
                 </div>
 
 
                 <div class="white-input" >
                     <h2>Gender:</h2>
-                    <p  v-if="!editing" >{{ gender }} </p>
+                    <p  v-if="!editing" >{{ animal.gender.gender }} </p>
                     <input v-if="editing" v-model="gender" placeholder="hembra" />
                 </div>
 
 
                 <div class="white-input" >
-                    <h2>Date of admission:</h2>
+                    <h2>Date of admission: {{ animal.admission_date }}</h2>
                     <!-- <p v-if="!editing" >{{ date }} </p> -->
                     <input type="date" v-if="editing" v-model="family" placeholder="hembra" />
 
@@ -93,12 +88,12 @@ const deleteCard = () => {
             <div class="buttons-container">
                 <div class="btn">
                 <button @click="editCard()">
-                    <img src="../../../public/img/lapiz3.png" alt="">
+                    <img src="/img/lapiz3.png" alt="">
                 </button>
                 </div>
                 <div class="btn">
                 <button @click="deleteCard">
-                    <img src="../../../public/img/papelera.png" alt="">
+                    <img src="/img/papelera.png" alt="">
                 </button>
                 </div>
             </div>
