@@ -1,6 +1,22 @@
 <script setup>
 
 import { ref } from 'vue';
+import AnimalRepository from "../../repositories/AnimalRepository";
+import AnimalService from "../../services/AnimalService";
+
+
+let repository = new AnimalRepository()
+let service = new AnimalService(repository)
+let animals = []
+let isLoaded = ref(false)
+
+async function setAnimals() {
+    animals = await service.index()
+    isLoaded.value = true
+    console.log(animals)
+    }
+
+    setAnimals();
 
 const name = ref("Mark");
 const family = ref("Aves");
@@ -98,8 +114,6 @@ const deleteCard = () => {
     width: 35%;
     display: flexbox;
     padding: 50px;
-    /*  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 2fr)); */
     gap: 20px;
     margin: 50px 30px;
 
