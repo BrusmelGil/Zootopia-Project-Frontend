@@ -19,7 +19,7 @@ async function login(username, password) {
       headers: {
         'Authorization': 'Basic ' + authString
       },
-      withCredentials: true
+      credentials: 'include'
     });
     const text = await response.json();
     console.log(text);

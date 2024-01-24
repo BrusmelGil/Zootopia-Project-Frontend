@@ -7,12 +7,11 @@ export default class AuthRepository {
         try {
             let authString = btoa(`${username}:${password}`)
             const response = await fetch(this.uri + '/login', {
-                withCredentials: true,
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + authString
-                }
-                
+                },
+                credentials: 'include'
             });
             const text = await response.json();
             console.log(text); 
@@ -25,8 +24,8 @@ export default class AuthRepository {
 
         try {
             const response = await fetch(this.uri + '/logout', {
-                withCredentials: true,
                 method: 'GET',
+                credentials: 'include'
             });
             console.log("Logout successfull"); 
         } catch (error) {
