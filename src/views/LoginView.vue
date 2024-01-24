@@ -24,7 +24,7 @@ import ImagesLogin from "./../components/login/ImagesLogin.vue";
   justify-content: space-evenly;
 }
 main {
-  background-image: url(./../../public/images/background.png);
+  background-image: url(/images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
