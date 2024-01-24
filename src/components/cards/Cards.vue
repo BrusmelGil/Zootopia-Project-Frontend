@@ -190,7 +190,7 @@ input{
 
 } 
 
-/* @media (max-width: 1025px) {  
+/* @media (max-width: 1000px) {  
         width: 80%;
         padding: 20px;
 
