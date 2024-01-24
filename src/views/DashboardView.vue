@@ -58,7 +58,7 @@ setAnimals();
 
 <style lang="scss" scoped>
 main {
-  background-image: url(../../public/img/background-hojas.png);
+  background-image: url(/img/background-hojas.png);
   background-repeat: repeat-y;
   background-size: cover;
   width: 100vw;
@@ -78,6 +78,7 @@ main {
 #cards-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 30px;
 }
 .addDesktop {
