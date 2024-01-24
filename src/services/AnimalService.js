@@ -31,7 +31,7 @@ export default class AnimalService {
 
     async create(animal) {
         const animals = await this.repository.getAll()
-        await this.repository.create(animal)
+        await this.repository.save(animal)
         
         animals.push(animal)
         return this.animals
