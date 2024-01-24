@@ -1,6 +1,21 @@
 <script setup>
 
 import { ref } from 'vue';
+import AnimalRepository from "../../repositories/AnimalRepository";
+import AnimalService from "../../services/AnimalService";
+
+
+let repository = new AnimalRepository()
+let service = new AnimalService(repository)
+let animalsList = []
+let isLoaded = ref(false)
+
+async function setAnimals() {
+    animalsList = await service.index()
+    isLoaded.value = true
+}
+
+setAnimals();
 
 const isFormOpen = ref(false);
 const newAnimalName = ref('');
@@ -32,7 +47,8 @@ const submitForm = () => {
     genderName: newAnimalGender.value,
   };
 
-  console.log(newAnimal);
+  service.create(newAnimal);
+  animalsList.push(newAnimal);
   closeForm();
 };
 
