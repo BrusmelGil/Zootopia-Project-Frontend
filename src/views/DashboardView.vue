@@ -1,3 +1,4 @@
+
 <script setup>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
@@ -5,11 +6,16 @@ import Searchbar from "../components/buttons/Searchbar.vue";
 import AddDesktop from "../components/buttons/AddDesktop.vue";
 import AddMobile from "../components/buttons/AddMobile.vue";
 import Filter from "../components/dashboard/FilterButton.vue";
+import Cards from "../components/cards/Cards.vue";
 </script>
 
 <template>
-  <div>
+
+  
+  
     <Header />
+
+    <main>
 
     <div id="topContainer">
       <Searchbar />
@@ -18,8 +24,10 @@ import Filter from "../components/dashboard/FilterButton.vue";
         <AddDesktop />
       </div>
     </div>
-
-    <h1>This is a dashboard view,</h1>
+    <div id="cards-container">
+    <Cards />
+  </div>
+  
 
     <div id="bottomContainer">
       <Filter />
@@ -28,16 +36,38 @@ import Filter from "../components/dashboard/FilterButton.vue";
         <AddMobile />
       </div>
     </div>
-
+  </main>
     <Footer />
-  </div>
-</template>
+
+
+  </template>
+
 
 <style lang="scss" scoped>
 #topContainer {
   display: flex;
   justify-content: flex-start;
   padding: 5px;
+
+*{
+  margin: 0;
+  padding: 0;
+  
+} 
+
+main{
+  background-image: url(../../public/img/backgroud\ hojas.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+#cards-container{
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  
+}
 
   .addDesktop {
     display: none;
