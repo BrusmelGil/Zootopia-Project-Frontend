@@ -94,7 +94,7 @@ function filterFamily() {
   background-color: $orange;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 100;
-  top: -25%;
+  top: 95%;
   width: 120%;
 
   a {

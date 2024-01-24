@@ -99,24 +99,23 @@ const submitForm = () => {
 
 #addMobile {
     
-    background: rgba(255, 255, 255, 0.87);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  display: inline-block;
+  background-color: $orange;
+  width: 7rem;
+  z-index: 1;
+  text-align: center;
 
-    font-family: 'Shojumaru', system-ui;
-    padding: 10px;
-    border-radius: 5px;
+  padding: 10px;
+  font-family: 'Shojumaru', system-ui;
+  cursor: pointer;
   
-    height: 40px;
-    margin-top: 9px;
-  
-    button {
-      color: black;
-      text-align: center;
-    }
+  border-radius: 10px;
+  margin-left: 15px;
+
+  button {
+    color: white;
+  }
   }
   
   .popup {
@@ -129,6 +128,7 @@ const submitForm = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 
     h2 {
         font-size: 40px;

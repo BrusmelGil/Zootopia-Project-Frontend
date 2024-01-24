@@ -123,6 +123,8 @@ const submitForm = () => {
     justify-content: center;
     align-items: center;
 
+    z-index: 2;
+
     h2 {
         font-size: 40px;
         padding: 25px;
@@ -141,10 +143,7 @@ const submitForm = () => {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-  
-    label {
-      margin-bottom: 5px;
-    }
+
   
     input {
       padding: 8px;
